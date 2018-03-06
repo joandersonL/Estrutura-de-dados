@@ -8,16 +8,13 @@ void margeSorte(int v[],int n);
 void margeSorteAux(int v[],int inicio, int fim,int orde[]);
 
 int main(){
-    int v[16];
-    for(int i=0;i<16;i++){
-        v[i]= rand()%20 + 1;
+    int x =1000;
+    int v[x];
+    for(int i=0;i<x;i++){
+        v[i]= rand()%100;
     }
-    for(int i=0;i<16;i++){
-        cout<<v[i]<<"|";
-    }
-    cout<<"\n\n\n";
-    margeSorte(v,16);
-    for(int i=0;i<16;i++){
+    margeSorte(v,x);
+    for(int i=0;i<x;i++){
         cout<<v[i]<<"|";
     }
     return 0;
