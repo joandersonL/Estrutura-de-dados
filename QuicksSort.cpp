@@ -20,32 +20,30 @@ void quicksort(int v[],int inicio,int final){
         return;
     }
     while(i<j){
-        while(v[i]<pivo) i++;
-        while(v[j]>pivo) j--;
+        while(v[i]<pivo&&i<=j) i++;
+        while(v[j]>=pivo &&j>=i) j--;
         if(i<j){
             troca(v,j,i);
-            i++;
-            j--;
         }else{
             troca(v,j,inicio);
         }
         flag=true;
     }
-    if(flag){
+
         quicksort(v,inicio,j-1);
         quicksort(v,j+1,final);
 
-    }
+
 
 }
 
 
 int main(){
-    long int x = 1000;
-    int v[x];
-    for(int i=0;i<x;i++){
-        v[i]=rand();
-    }
+    long int x = 8;
+    int v[x] = {5,3,4,17,14,20,10};
+    /*for(int i=0;i<x;i++){
+        v[i]=rand()%5;
+    }*/
     //cout<<endl;
     quicksort(v,0,x-1);
     for(int i=0;i<x;i++){
